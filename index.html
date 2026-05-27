@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTHONGGAM_YT</title>
+    <style>
+        /* CSS CHUNG */
+        :root { --primary-pink: #ffb7c5; --light-pink: #ffe4e8; }
+        body { font-family: sans-serif; background-color: var(--primary-pink); margin: 0; color: white; display: flex; justify-content: center; }
+        .page { display: none; width: 100%; max-width: 400px; padding: 20px; box-sizing: border-box; }
+        .active { display: block; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .card { background: rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 15px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button { cursor: pointer; border: none; }
+    </style>
+</head>
+<body>
+
+<!-- TRANG 1 - TRANG CHỦ -->
+<div id="page1" class="page active">
+    <div class="header">
+        <div>LTHONGGAM_YT</div>
+        <div onclick="showPage('page2')" style="cursor:pointer">☰</div>
+    </div>
+    <div style="text-align:center">
+        <div class="card">Welcome to my website.</div>
+        <h1>Hi EVERYONE, MY FULL NAME</h1>
+        <h2>♥ LÊ THỊ HỒNG GẤM ♥</h2>
+        <p>Là 1 học sinh lớp 12 đam mê Kinh tế, Tiếng Anh, Ngữ văn và yêu thích Công nghệ thông tin...</p>
+        <button onclick="showPage('page4')" style="background:white; color:deeppink; padding:15px; width:100%; border-radius:50px;">✉ Liên hệ ngay</button>
+    </div>
+</div>
+
+<!-- TRANG 2 - MENU -->
+<div id="page2" class="page">
+    <div class="header">
+        <div onclick="showPage('page1')" style="cursor:pointer">⬅</div>
+        <div>MENU</div>
+    </div>
+    <div class="card" onclick="showPage('page1')">🏠 Trang chủ</div>
+    <div class="card">
+        📚 Tài liệu học tập:
+        <ul style="list-style:none; padding-left:20px;">
+            <li onclick="showPage('page3-van')">Ngữ văn</li>
+            <li onclick="showPage('page3-anh')">Tiếng Anh</li>
+            <li onclick="showPage('page3-toan')">Toán</li>
+            <li onclick="showPage('page3-khac')">Các môn khác</li>
+        </ul>
+    </div>
+    <div class="card" onclick="showPage('page4')">❓ Hỏi đáp</div>
+    <div class="card" onclick="showPage('page4')">✉ Liên hệ</div>
+</div>
+
+<!-- TRANG 3 - MÔN HỌC (Dùng chung cấu trúc) -->
+<div id="page3-van" class="page">
+    <div class="header"><div onclick="showPage('page2')">⬅</div><div>LTHONGGAM_YT</div><div onclick="showPage('page2')">☰</div></div>
+    <div class="card">
+        <h2>Môn Ngữ Văn</h2>
+        <p>Danh sách tài liệu, ôn thi...</p>
+    </div>
+    <a href="https://1drv.ms/w/c/19A8403C125443AD/IQCVimLeMfBRTq8OLLNMUTtGAb7Ư73lDjMvmWCfzdKlcXWU" target="_blank"><div class="card">Tài liệu tham khảo</div></a>
+    <div class="card" onclick="showPage('page-ve-website')">Phương pháp học</div>
+</div>
+
+<!-- TRANG 4 - HỎI ĐÁP & LIÊN HỆ -->
+<div id="page4" class="page">
+    <h2>HỎI VÀ ĐÁP & LIÊN HỆ</h2>
+    <div class="card"><a href="https://zalo.me/977418122">Zalo: @977418122</a></div>
+    <div class="card"><a href="https://www.facebook.com/profile.php?id=YOUR_ID">FB: Lê Gấm</a></div>
+    <div class="card"><a href="https://www.tiktok.com/@legam_ziti">TikTok: @legam_ziti</a></div>
+</div>
+
+<!-- TRANG VỀ WEBSITE (Dùng chung cho Phương pháp học) -->
+<div id="page-ve-website" class="page">
+    <h1>VỀ WEBSITE</h1>
+    <div class="card">Website được xây dựng nhằm chia sẻ tài liệu học tập...</div>
+    <button onclick="showPage('page4')">Liên hệ ngay</button>
+</div>
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
